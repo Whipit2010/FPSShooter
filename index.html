@@ -24,6 +24,19 @@
         document.body.style.textAlign = "left";
       }
 
+      // Förhindrar att Escape-tangenten lämnar fullskärm
+      window.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          event.preventDefault();  // Förhindra att Escape lämnar fullskärm
+
+          // Lägg till logik för att hantera Escape här (t.ex. öppna inställningsmenyn)
+          console.log("Escape tryckt, men fullskärm stängs inte.");
+          
+          // Exempel på att visa inställningsmeny:
+          // document.getElementById("settingsMenu").style.display = "block";
+        }
+      });
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
         arguments: [],
         dataUrl: "Build/FPSShooterWEB.data",
